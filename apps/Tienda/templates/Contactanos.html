@@ -1,0 +1,54 @@
+{% extends './base.html' %}
+
+{% load static %}
+
+
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/reg.css' %}">
+{% endblock %}
+
+
+{% block body %}
+  
+<body class="dark" id="bodyIndex" style="font-family:  'Times New Roman', Times, serif;"> 
+    </div>
+    <div style="color:rgb(0, 0, 0)"; class="container mt-5 mb-5">   <!-- El estilo se le aplica a la clase padre -->
+      <form action="" id="miniFormulario">
+          <h1 style="color:rgb(0, 0, 0)">Contáctanos</h1>
+            <div class="row">
+              <div class="col">
+                <label for="txtNombre">Ingrese Nombre: </label>
+                <input id="txtNombre" name="txtNombre" type="text" class="form-control" placeholder="ingrese su nombre: ">
+              </div>
+              
+              <div class="col">
+                <label for="txtFecha">Ingrese su fecha de nacimiento:</label>
+                <input id="txtFecha" name="txtFecha" type="date" class="form-control" placeholder="12-12-2012">
+              </div>
+              
+              <div class="col">
+                <label for="txtEmail">Ingrese su Correo: </label>
+                <input id="txtEmail" name="txtEmail" type="email" class="form-control" placeholder="henryCavill@gmail.com">
+              </div>
+              
+              <div class="col">
+                <label for="txtFono">Ingrese su teléfono: </label>
+                <input id="txtFono" name="txtFono" type="text" class="form-control" placeholder="Ej: +569 999 999 99">
+              </div>
+              <button class="btn btn-primary mt-3">Enviar</button>
+          </div> 
+      </form>  
+  </div>>
+
+</body>
+
+{% endblock %}
+
+{% block script %}
+  <script src=" {% static 'js/jquery-3.6.4.min.js' %}"></script>
+  <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+  <script src="{% static 'js/validaciones.js' %}"></script>
+{% endblock %}
+
+      

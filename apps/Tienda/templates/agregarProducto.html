@@ -1,0 +1,137 @@
+{% extends './base.html' %}
+
+
+{% load static %}
+
+
+
+{% block head %}
+    
+{% endblock %}
+
+
+
+{% block body %}
+  
+
+
+<div class="container bg-light rounded mt-5">
+    <h1>Agregar productos</h1>
+    <form action="/FormularioAgregarProd" method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <div class="row">
+            <div class="col-md-4">
+                <label for="txtSku">SKU:</label>
+                <input name="txtSku" id="txtSku" type="text" class="form-control">
+                {% if messages %}
+              <ul class="messages">
+                  {% for message in messages %}
+                      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                  {% endfor %}
+              </ul>
+            {% endif %}
+            </div>
+
+            <div class="col-md-8">
+                <label for="txtnombre">Nombre:</label>
+                <input name="txtnombre" id="txtnombre" type="text" class="form-control">
+            </div>
+
+            <div class="col-md-4">
+                <label for="txtprecio">Precio:</label>
+                <input name="txtprecio" id="txtprecio" type="text" class="form-control">
+            </div>
+
+
+            <div class="col-md-4">
+                <label for="txtStock">Stock:</label>
+                <input name="txtStock" id="txtStock" type="text" class="form-control">
+            </div>
+
+            <div class="col-md-4">
+                <label for="cmbCategoria">Categoria:</label>
+                <select id="cmbCategoria" name="cmbCategoria" class="form-select" aria-label="Default select example">
+                    <option disabled selected>Seleccione</option>
+                    {% for c in cate %}
+                    <option value="{{c.id_categoria}}">{{c.nombre_categoria}}</option>
+                    {% endfor %}
+                  </select> 
+            </div>
+
+            <div class="col-md-12">
+                <label for="txtDescripcion">Descripcion:</label>
+                <input name="txtDescripcion" id="txtDescripcion" type="text" class="form-control">
+            </div>
+
+            <div class="col-md-12">
+                <label for="txtImagen">Imagen:</label>
+                <input name="txtImagen" id="txtImagen" type="file" class="form-control">
+            </div>
+        </div>
+        <button class="btn btn-success mt-5 mb-5 w-100">Agregar producto</button>
+    </form>
+</div>
+
+<div class="container bg-light rounded mt-5">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">SKU</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for p in prod %}
+          <tr>
+            <th scope="row">{{p.sku_prod}}</th>
+            <td><img src="{{p.imagenUrl_prod.url}}" alt="" height="50"></td>
+            <td>{{p.nombre_prod}}</td>
+            <td>{{p.precio_prod}}</td>
+            <td>{{p.descripcion_prod}}</td>
+            <td>{{p.categoriaId.nombre_categoria}}</td>
+            <td>{{p.stock_prod}}</td>
+            <td><a href="editarProducto/{{p.sku_prod}}" class="btn btn-primary">Editar</a></td>
+            <td><a type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Eliminar
+            </td>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">¿Está seguro que desea eliminar el producto?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    El producto será eliminado permanentemente
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancelar</button>
+                    <a href="eliminarProducto/{{p.sku_prod}}" class="btn btn-danger">Continuar Eliminando</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+          </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+{% block script %}
+    
+{% endblock %}
+

@@ -1,0 +1,253 @@
+/*================FUENTES================*/
+/*=======================================*/
+@font-face {
+    font-family: "Elfico";
+    src: url(font/hobbitonbrushhand.ttf);
+}
+@font-face {
+    font-family: "TomRaider";
+    src: url(font/Tomb_Raider.ttf);
+}
+@font-face {
+    font-family: "Plantitas";
+    src: url(font/Plante.ttf);
+}
+/*===============FIN FUENTES=============*/
+/*=======================================*/
+
+
+
+
+
+
+
+
+/*===========ICONO PRINCIPAL=============*/
+/*=======================================*/
+#DragonIcono{
+    width: 50px;
+    height: auto;
+}
+/*=========FIN ICONO PRINCIPAL===========*/
+/*=======================================*/
+
+
+
+#miniFormulario{
+    background-color: #ffffff;
+}
+
+
+
+
+/*===========================FOOTER============================*/
+/*=============================================================*/
+#ImgLogos img{     
+    width: 40px;
+    height: 25px;
+    padding-right: 15px;
+}
+#ImgLogos a{
+    text-decoration: none;
+    font-size: 20px;
+}
+#ImgLogos{
+    color: rgb(255, 255, 255);
+}
+#Footer b{
+    color: rgb(0, 0, 0) ;
+}
+
+#Referencias :hover{   /* llamo al id padre que almacena todo y luego li para señalar que clases quiero cambiar, y termino especificando el hover para que se les aplique a todos los links */
+    color: rgb(38, 24, 71);
+
+}
+/*======================FIN FOOTER==========================*/
+/*==========================================================*/
+
+
+
+
+/*======================Administración===========================*/
+/*===========================================================*/
+#LetrasPaneles{
+    font-size: 25px;
+    text-shadow: 1px 0px 10px #ffffff, 1px 0px 10px #ffffff, 1px 0px 10px #ffffff, 1px 0px 10px #ffffff;  /* Fondo paras las letras trucho */
+    font-size: 25px;
+}
+.error{
+    color: red;
+}
+/*=====================FIN ADMINISTRACIÓN====================*/
+/*===========================================================*/
+
+
+
+
+
+
+
+
+/*======================CARRITO======================*/
+/*===================================================*/
+
+#TituloCompra{
+    color: rgb(93, 9, 141);
+    text-shadow: 1px 0px 10px #ffffff, 1px 0px 10px #ffffff, 1px 0px 10px #ffffff, 1px 0px 10px #ffffff;
+} 
+#listaCompra th{
+    color: rgb(93, 9, 141);
+    text-shadow: 1px 0px 10px #ffffff, 1px 0px 10px #ffffff, 1px 0px 10px #ffffff, 1px 0px 10px #ffffff;
+}
+#IconTitleCatalogo{
+    width: 75px;
+    height: auto;
+    padding: 5px;
+    font-size: 1000px;
+}
+#imgProduct{
+    width: 120px;
+    height: auto;
+    padding: 2px;
+    display: flex;
+}
+.table-responsive{
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    background-color: #ffffff;
+}
+#procesarPago{
+    background-color: white;
+}
+#txtTotal{
+    font-size: 18px;
+}
+#totalCompra{
+    font-size: 20px;
+}
+#inicioSesion{
+    width: 30px;
+    width: 30px;
+    margin-left: 400px;
+}
+.modal-contenedor{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.img-carrito{
+    width: 200px;
+    padding: 20px;
+}
+
+#cVacio{
+    font-weight: 900;
+    font-style: italic;
+    color: rgb(199, 64, 138);
+}
+
+.alerta{
+    font-weight: 900;
+    font-size: 24px;
+}
+
+
+.boton{
+    opacity: 0;
+}
+
+/*=====================FIN CARRITO===================*/
+/*===================================================*/
+
+
+
+/*==================INICIO DE SESION=================*/
+/*===================================================*/
+
+
+#miBoton{
+    background-color: blue;
+ 
+}
+#bg{
+
+    background-position: center center;
+    background-repeat: 100%;
+}
+/* #bbg{
+    background: #ff57ca;
+    background:linear-gradient(to right, #9838cf, #ff57ca);
+} */
+#bbg{
+
+    background-position: center center;
+}
+#btns{
+    border-color: black;
+}
+/*===============FIN INICIO DE SESION================*/
+/*===================================================*/
+
+
+
+
+/*=================================================*/
+/*==================== Reloj ======================*/
+
+.wrap{
+    width: 50%;
+    max-width: 1000px;
+   /* margin: auto;  para darle margin a toda la clase*/
+}
+.widget{
+    width: 40%;
+    /*margin: 2em;   para darle margin*/
+    /* margin: 32px; */
+}
+.widget p{
+    display: inline-block;
+    line-height: 1em;
+}
+body.dark .reloj{   /*claro */
+    background: rgba(153, 135, 135, 0.5);
+}
+.fecha{
+    font-family: Oswald, Arial;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 0.3125rem;
+    /* margin-bottom: px;*/
+    background: rgba(145, 189, 44, 0.644);
+    padding: 20px;
+    width: 100%;
+}
+body.dark .fecha{
+background: rgba(153, 135, 135, 0.5);
+
+}
+.reloj{ /* oscuro */
+    font-family: Oswald, Arial;
+    width: 100%;
+    padding: 20px;
+    font-size: 4em;
+    text-align: center;
+    background: rgba(145, 189, 44, 0.644);
+}
+.reloj  .caja-segundos{
+    display: inline-block;
+}
+.reloj  .segundos,
+.reloj  .ampm{
+    font-size: 2rem;
+    display: block;
+}
+.BotonesReloj{
+    width: 100%;
+    height: auto;
+    padding-right: 80%;
+
+}
+/*===================FIN DEL RELOJ=================*/
+/*=================================================*/

@@ -1,0 +1,142 @@
+{% extends './base.html' %}
+
+{% load static %}
+
+
+
+{% block head %}
+  
+
+{% endblock %}
+
+{% block body %}
+
+    <!-- Lista Productos -->
+    <!-- <main>
+      <div class="container-fluid d-flex mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div id="contenedorProd" class="row mt-5"></div>
+        </div>
+      </div>
+    </main> -->
+    <div class="container" style="text-align: center;">
+       <div class="row mt-5 mb-5">
+        <h1 class="bg-secondary rounded-pill text-center mt-5" ><strong>Razer<img class="navbar-brand" src="{% static 'img/Razer-Logo.png' %}" style="width: 100px;"></img></h1></strong>
+          {% for p in cate_flores %}
+          {% if p.stock_prod > 0 %}
+          <div class="col mt-5">
+              <div class="card"  style="width: 18rem;">
+                  <img src="{{p.imagenUrl_prod.url}}" class="card-img-top" alt="...">
+                  <div id="CardCatalogo" class="card-body">
+                    <h4 class="card-title"><strong>{{p.nombre_prod}}</strong></h4>
+                    <p class="text">{{p.descripcion_prod}}</p>
+                    <h5 class="text precio">${{p.precio_prod}}</h5>
+                    <form>
+                      {% csrf_token %}
+                      {% if user.is_authenticated %}
+                        <button data-product="{{ p.sku_prod }}" class="btn btn-primary agregarProd">Añadir</button>
+                      {% else %}
+                        <a href="{% url 'signin' %}" class="btn btn-primary">Añadir</a>
+                      {% endif %}
+                    </form>
+                  </div>
+              </div>
+          </div>
+          {% endif %}
+          {% endfor %}    
+      </div>
+
+      <div class="row mt-5 mb-5" style="text-align: center;">
+        <h1 class="bg-secondary rounded-pill text-center mt-5"><strong>MSI<img class="navbar-brand" src="{% static 'img/logo-msi.svg ' %}" style="width: 60px;"></img></h1></strong>
+          {% for p in cate_pl %}
+          {% if p.stock_prod > 0 %}
+          <div class="col mt-5">
+              <div class="card"  style="width: 18rem;">
+                  <img src="{{p.imagenUrl_prod.url}}" class="card-img-top" alt="...">
+                  <div id="CardCatalogo" class="card-body">
+                    <h4 class="card-title"><strong>{{p.nombre_prod}}</strong></h4>
+                    <p class="text">{{p.descripcion_prod}}</p>
+                    <h5 class="text">${{p.precio_prod}}</h5>
+                    <form >{% csrf_token %}  
+                    <button data-product={{p.sku_prod}}  class="btn btn-primary agregarProd" type="submit">Añadir</button>
+                    </form>
+                  </div>
+              </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+      </div>
+
+      <div class="row mt-5 mb-5" style="text-align: center;">
+        <h1 class="bg-secondary rounded-pill text-center mt-5"><strong>Hyperx<img class="navbar-brand" src="{% static 'img/hyperx-logo.png' %}" style="width: 100px;"></img></h1></strong>
+          {% for p in cate_arb %}
+          {% if p.stock_prod > 0 %}
+          <div class="col mt-5">
+              <div class="card"  style="width: 18rem;">
+                  <img src="{{p.imagenUrl_prod.url}}" class="card-img-top" alt="...">
+                  <div id="CardCatalogo" class="card-body">
+                    <h4 class="card-title"><strong>{{p.nombre_prod}}</strong></h4>
+                    <p class="text">{{p.descripcion_prod}}</p>
+                    <h5 class="text">${{p.precio_prod}}</h5>
+                    <form >{% csrf_token %}  
+                    <button data-product={{p.sku_prod}}  class="btn btn-primary agregarProd" type="submit">Añadir</button>
+                    </form>
+                  </div>
+              </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+      </div>
+
+      <div class="row mt-5 mb-5" style="text-align: center;">
+        <h1 class="bg-secondary rounded-pill text-center mt-5"><strong>Logitech<img class="navbar-brand" src="{% static 'img/Logitech-logo.png' %}" style="width: 100px;"></img></h1></strong>
+          {% for p in cate_mac %}
+          {% if p.stock_prod > 0 %}
+          <div class="col mt-5">
+              <div class="card"  style="width: 18rem;">
+                  <img src="{{p.imagenUrl_prod.url}}" class="card-img-top" alt="...">
+                  <div id="CardCatalogo" class="card-body">
+                    <h4 class="card-title"><strong>{{p.nombre_prod}}</strong></h4>
+                    <p class="text">{{p.descripcion_prod}}</p>
+                    <h5 class="text">${{p.precio_prod}}</h5>
+                    <form >{% csrf_token %}  
+                    <button data-product={{p.sku_prod}}  class="btn btn-primary agregarProd" type="submit">Añadir</button>
+                    </form>
+                  </div>
+              </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+      </div>
+
+      <div class="row mt-5 mb-5" style="text-align: center;">
+        <h1 class="bg-secondary rounded-pill text-center mt-5"><strong>Redragon<img class="navbar-brand" src="{% static 'img/logo_redragon.png' %}" style="width: 100px;"></img></h1></strong>
+          {% for p in cate_herr %}
+          {% if p.stock_prod > 0 %}
+          <div class="col mt-5">
+              <div class="card"  style="width: 18rem;">
+                  <img src="{{p.imagenUrl_prod.url}}" class="card-img-top" alt="...">
+                  <div id="CardCatalogo" class="card-body">
+                    <h4 class="card-title"><strong>{{p.nombre_prod}}</strong></h4>
+                    <p class="text">{{p.descripcion_prod}}</p>
+                    <h5 class="text">${{p.precio_prod}}</h5>
+                    <form >{% csrf_token %}  
+                    <button data-product={{p.sku_prod}}  class="btn btn-primary agregarProd" type="submit">Añadir</button>
+                    </form>
+                  </div>
+              </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+      </div>
+      
+      
+    </div>
+    
+  
+{% endblock %}
+
+
+{% block script %}
+    <script src="{% static 'js/catalogo.js' %}"></script>
+{% endblock %}
