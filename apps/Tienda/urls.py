@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 from . import views
+from django.urls import path
+from .views import iniciar_transaccion, completar_transaccion
 
 urlpatterns = [
     path('', views.CargarInicio, name='home'),
@@ -31,6 +33,8 @@ urlpatterns = [
     ##path('carrito',views.carrito)
 
     path('obtenerProducto',views.obtenerProducto,name='obtenerProducto'),
-    path('actualizarStock',views.actualizarStock)
+    path('actualizarStock',views.actualizarStock),
+    path('transbank/iniciar-transaccion/', iniciar_transaccion, name='iniciar_transaccion'),
+    path('transbank/completar-transaccion/', completar_transaccion, name='completar_transaccion'),
 ]
  
