@@ -13,6 +13,15 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 
+from transbank.webpay.webpay_plus.transaction import Transaction, WebpayOptions
+from transbank.common.integration_type import IntegrationType
+
+from django.shortcuts import render, redirect
+from django.conf import settings
+from transbank.webpay.webpay_plus.transaction import Transaction
+
+
+
 # Create your views here.
 
 def CargarInicio(request):
@@ -226,3 +235,29 @@ def actualizarStock(request):
             return JsonResponse({'message': 'Error'})
 
     return JsonResponse({'message': 'Error'})
+#------------------------------------------------------------------------------------------------------------#
+def iniciar_transaccion(request):
+    if request.method == 'POST':
+        totalCompra = request.POST.get('totalCompra')  # Obtener el valor de totalCompra en lugar de amount
+        buy_order = 'ordenCompra12345678'
+        session_id = 'sesion1234564'
+        return_url = request.build_absolute_uri('/transbank/completar-transaccion/')
+
+        response = Transaction().create(buy_order, session_id, totalCompra, return_url)  # Pasar totalCompra en lugar de amount
+
+        if 'token' in response and 'url' in response:
+            return redirect(response['url'] + '?token_ws=' + response['token'])
+        else:
+            return render(request, 'error.html', {'message': 'Error al iniciar la transacción.'})
+    else:
+        return redirect('mostrar_formulario')
+
+
+def completar_transaccion(request):
+    token = request.GET.get('token_ws')
+    response = Transaction().commit(token)
+
+    if 'response_code' in response and response['response_code'] == 0:
+        return render(request, 'success.html', {'response': response})
+    else:
+        return render(request, 'error.html', {'message': 'Error al completar la transacción.'})
