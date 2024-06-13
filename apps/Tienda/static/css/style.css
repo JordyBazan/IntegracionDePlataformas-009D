@@ -1,253 +1,142 @@
-/*================FUENTES================*/
-/*=======================================*/
-@font-face {
-    font-family: "Elfico";
-    src: url(font/hobbitonbrushhand.ttf);
-}
-@font-face {
-    font-family: "TomRaider";
-    src: url(font/Tomb_Raider.ttf);
-}
-@font-face {
-    font-family: "Plantitas";
-    src: url(font/Plante.ttf);
-}
-/*===============FIN FUENTES=============*/
-/*=======================================*/
-
-
-
-
-
-
-
-
-/*===========ICONO PRINCIPAL=============*/
-/*=======================================*/
-#DragonIcono{
-    width: 50px;
-    height: auto;
-}
-/*=========FIN ICONO PRINCIPAL===========*/
-/*=======================================*/
-
-
-
-#miniFormulario{
-    background-color: #ffffff;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-
-
-
-/*===========================FOOTER============================*/
-/*=============================================================*/
-#ImgLogos img{     
-    width: 40px;
-    height: 25px;
-    padding-right: 15px;
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
 }
-#ImgLogos a{
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.footer-section {
+    margin: 10px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h2 {
+    margin-bottom: 15px;
+}
+
+.footer-section p, .footer-section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
     text-decoration: none;
-    font-size: 20px;
-}
-#ImgLogos{
-    color: rgb(255, 255, 255);
-}
-#Footer b{
-    color: rgb(0, 0, 0) ;
 }
 
-#Referencias :hover{   /* llamo al id padre que almacena todo y luego li para señalar que clases quiero cambiar, y termino especificando el hover para que se les aplique a todos los links */
-    color: rgb(38, 24, 71);
-
-}
-/*======================FIN FOOTER==========================*/
-/*==========================================================*/
-
-
-
-
-/*======================Administración===========================*/
-/*===========================================================*/
-#LetrasPaneles{
-    font-size: 25px;
-    text-shadow: 1px 0px 10px #ffffff, 1px 0px 10px #ffffff, 1px 0px 10px #ffffff, 1px 0px 10px #ffffff;  /* Fondo paras las letras trucho */
-    font-size: 25px;
-}
-.error{
-    color: red;
-}
-/*=====================FIN ADMINISTRACIÓN====================*/
-/*===========================================================*/
-
-
-
-
-
-
-
-
-/*======================CARRITO======================*/
-/*===================================================*/
-
-#TituloCompra{
-    color: rgb(93, 9, 141);
-    text-shadow: 1px 0px 10px #ffffff, 1px 0px 10px #ffffff, 1px 0px 10px #ffffff, 1px 0px 10px #ffffff;
-} 
-#listaCompra th{
-    color: rgb(93, 9, 141);
-    text-shadow: 1px 0px 10px #ffffff, 1px 0px 10px #ffffff, 1px 0px 10px #ffffff, 1px 0px 10px #ffffff;
-}
-#IconTitleCatalogo{
-    width: 75px;
-    height: auto;
-    padding: 5px;
-    font-size: 1000px;
-}
-#imgProduct{
-    width: 120px;
-    height: auto;
-    padding: 2px;
-    display: flex;
-}
-.table-responsive{
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    background-color: #ffffff;
-}
-#procesarPago{
-    background-color: white;
-}
-#txtTotal{
-    font-size: 18px;
-}
-#totalCompra{
-    font-size: 20px;
-}
-#inicioSesion{
-    width: 30px;
-    width: 30px;
-    margin-left: 400px;
-}
-.modal-contenedor{
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+.footer-section ul li a:hover {
+    text-decoration: underline;
 }
 
-.img-carrito{
-    width: 200px;
-    padding: 20px;
+.footer-bottom {
+    padding: 10px;
+    background: #222;
+    color: #ccc;
 }
 
-#cVacio{
-    font-weight: 900;
-    font-style: italic;
-    color: rgb(199, 64, 138);
-}
-
-.alerta{
-    font-weight: 900;
-    font-size: 24px;
+.footer-bottom p {
+    margin: 0;
 }
 
 
-.boton{
-    opacity: 0;
-}
-
-/*=====================FIN CARRITO===================*/
-/*===================================================*/
 
 
+/* Estilo del navbar */
+#navBar {
+    background-color: #512470; /* Morado */
+    color: #d40707; /* Blanco */
+}
 
-/*==================INICIO DE SESION=================*/
-/*===================================================*/
+/* Estilo de la imagen de la marca */
+.navbar-brand img {
+    width: 80px;
+}
+
+/* Estilo de los enlaces de navegación */
+.nav-link {
+    color: #ffffff !important; /* Blanco */
+    font-weight: bold;
+}
+
+/* Efecto hover para los enlaces de navegación */
+.nav-link:hover {
+    color: #ff0000 !important; /* Rojo */
+}
+
+/* Estilo del botón de la barra de navegación para dispositivos pequeños */
+.navbar-toggler {
+    border: none;
+    background-color: #ff0000; /* Rojo */
+}
+
+/* Estilo del icono del botón de la barra de navegación */
+.navbar-toggler-icon {
+    background-color: #d81010; /* Blanco */
+}
+
+/* Estilo del menú desplegable */
+.dropdown-menu {
+    background-color: #ffffff; /* Blanco */
+    border: none;
+}
+
+/* Estilo de los elementos del menú desplegable */
+.dropdown-item {
+    color: #6a0dad; /* Morado */
+}
+
+/* Efecto hover para los elementos del menú desplegable */
+.dropdown-item:hover {
+    background-color: #ff0000; /* Rojo */
+    color: #ffffff; /* Blanco */
+}
+
+/* Estilo del icono del carrito de compras */
+#btnCarrito svg {
+    fill: #ffffff; /* Blanco */
+}
+
+/* Estilo de los botones de registro e inicio de sesión */
+button a {
+    color: #ffffff !important; /* Blanco */
+}
+
+/* Efecto hover para los botones de registro e inicio de sesión */
+button a:hover {
+    color: #ff0000 !important; /* Rojo */
+}
+
+/* Estilo del item de cerrar sesión y registro para mantener alineado el diseño */
+#NavCompleto .nav-item {
+    padding-left: 20px; /* Espacio entre elementos del menú */
+}
+
+/* Estilo adicional para el padding de los elementos de sesión */
+#NavCompleto .nav-item#paddingLeftSession {
+    padding-left: 1000px; /* Espacio para el elemento de cerrar sesión */
+}
+
+#NavCompleto .nav-item#paddingLeftSignup {
+    padding-left: 400px; /* Espacio para el elemento de registro */
+}
 
 
-#miBoton{
-    background-color: blue;
- 
-}
-#bg{
-
-    background-position: center center;
-    background-repeat: 100%;
-}
-/* #bbg{
-    background: #ff57ca;
-    background:linear-gradient(to right, #9838cf, #ff57ca);
-} */
-#bbg{
-
-    background-position: center center;
-}
-#btns{
-    border-color: black;
-}
-/*===============FIN INICIO DE SESION================*/
-/*===================================================*/
-
-
-
-
-/*=================================================*/
-/*==================== Reloj ======================*/
-
-.wrap{
-    width: 50%;
-    max-width: 1000px;
-   /* margin: auto;  para darle margin a toda la clase*/
-}
-.widget{
-    width: 40%;
-    /*margin: 2em;   para darle margin*/
-    /* margin: 32px; */
-}
-.widget p{
-    display: inline-block;
-    line-height: 1em;
-}
-body.dark .reloj{   /*claro */
-    background: rgba(153, 135, 135, 0.5);
-}
-.fecha{
-    font-family: Oswald, Arial;
-    text-align: center;
-    font-size: 1.5em;
-    margin-bottom: 0.3125rem;
-    /* margin-bottom: px;*/
-    background: rgba(145, 189, 44, 0.644);
-    padding: 20px;
-    width: 100%;
-}
-body.dark .fecha{
-background: rgba(153, 135, 135, 0.5);
-
-}
-.reloj{ /* oscuro */
-    font-family: Oswald, Arial;
-    width: 100%;
-    padding: 20px;
-    font-size: 4em;
-    text-align: center;
-    background: rgba(145, 189, 44, 0.644);
-}
-.reloj  .caja-segundos{
-    display: inline-block;
-}
-.reloj  .segundos,
-.reloj  .ampm{
-    font-size: 2rem;
-    display: block;
-}
-.BotonesReloj{
-    width: 100%;
-    height: auto;
-    padding-right: 80%;
-
-}
-/*===================FIN DEL RELOJ=================*/
-/*=================================================*/
