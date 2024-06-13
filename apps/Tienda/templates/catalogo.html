@@ -5,20 +5,33 @@
 
 
 {% block head %}
-  
+<style>
+.card {
+    border: 1px solid black;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgb(110, 0, 77);
+}
+
+/* Otros estilos */
+body {
+    text-align: center;
+}
+
+h1.bg-secondary {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin: 1em 0;
+}
+</style>
 
 {% endblock %}
 
 {% block body %}
 
-    <!-- Lista Productos -->
-    <!-- <main>
-      <div class="container-fluid d-flex mt-5 mb-5">
-        <div class="row justify-content-center">
-            <div id="contenedorProd" class="row mt-5"></div>
-        </div>
-      </div>
-    </main> -->
     <div class="container" style="text-align: center;">
        <div class="row mt-5 mb-5">
         <h1 class="bg-secondary rounded-pill text-center mt-5" ><strong>Razer<img class="navbar-brand" src="{% static 'img/Razer-Logo.png' %}" style="width: 100px;"></img></h1></strong>
