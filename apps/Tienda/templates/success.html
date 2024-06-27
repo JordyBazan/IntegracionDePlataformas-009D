@@ -1,0 +1,87 @@
+{% extends './base.html' %}
+
+{% load static %}
+
+
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/success.css' %}">
+
+        
+{% endblock %}
+
+
+{% block body %}
+
+<br>
+<br>
+
+
+<div class="outer-container">
+    <div class="left-container">
+        <h5>Compra VideoJuegos con nuestros amigos de TheGameShopper</h5>
+        <br>
+        <div class="image-container">
+            <img src="{% static 'img/integracion1.jpg' %}" alt="Imagen izquierda" style="border-radius: 20px;" >
+        </div>
+        <br>
+        <h5>La mejor pagina para comprar VideoJuegos</h5>
+    </div>
+
+    <div class="center-container" >
+        <div class="success-card" style="border-radius: 20px;" >
+            <h1>¡Transacción Exitosa!</h1>
+            <p>Gracias por tu compra. Tu transacción ha sido completada con éxito.</p>
+            <div class="details">
+                <p><strong>Monto pagado:</strong> ${{ totalCompra }}</p>
+                <p><strong>Fecha:</strong> {{ transaction_date }}</p>      
+            </div>
+            <a href="{% url 'home' %}" class="btn">Volver a la página principal</a>
+        </div>
+    </div>
+
+    <div class="right-container">
+        <h5>Por tu compra con nosotro opten un descuentos en TheGameShopper</h5>
+        <br>
+        <div class="image-container">
+            <img src="{% static 'img/integracion2.jpg' %}" alt="Imagen derecha" style="border-radius: 20px;" >
+        </div>
+        <br>
+        <h5>La mejor pagina para comprar VideoJuegos</h5>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}
+
+
+{% block script %}
+<script src="{% static 'js/carrito.js' %}"></script> 
+<script>
+  // JavaScript para asignar el valor de precio_calculado al campo amount antes de enviar el formulario
+  function setAmount() {
+      var precioCalculado = document.getElementById("totalCompra").innerText;
+      document.getElementById("amount_field").value = precioCalculado;
+  }
+</script>
+{% endblock %}
+
+
+
+            
+
+
+            

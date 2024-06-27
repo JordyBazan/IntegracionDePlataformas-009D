@@ -31,7 +31,6 @@
     </table>
     <h4 colspan="6" scope="col" class="text-right text-end">TOTAL</h4>
     <div id="totalCompra" colspan="6" scope="col" class="text-right text-end"></div>
-    <a href="{% url 'home' %}" class="btn btn-success mb-4" id="btnRealizarCompra">Comprar</a>
     </form>
     </div>
 
@@ -39,21 +38,13 @@
     <form id="transaccionForm" method="POST" action="{% url 'iniciar_transaccion' %}">
       {% csrf_token %}
       <input type="hidden" name="totalCompra" id="totalCompraField"> <!-- Nuevo campo oculto -->
-      <button type="submit">Iniciar Transacción nuevaaaa</button>
+      <button  type="submit"><a class="btn animated-btn">Pagar</a></button>
   </form>
   
 
 
 
-    #formulario de pago
-    <h1>Formulario de Pago</h1>
-    <form id="formPago" method="post" action="{% url 'iniciar_transaccion' %}">
-        {% csrf_token %}
-        <label for="amount">Monto:</label>
-        <input type="hidden" id="totalCompra" value="{{ totalCompra }}">
-        <input type="number" id="amount" name="amount" required>
-        <button type="submit" id="btnPagar">Pagar</button>
-    </form>
+
 
 
   </div>
